@@ -3,14 +3,14 @@ export const company = {
   shortName: 'Gelişim Teknik',
   location: 'İzmir / Bornova',
   address: '4076 Sokak No: 51 Yeşilova, Bornova / İzmir',
-  phone: '0232 348 79 48',
-  mobile: '0532 283 05 94',
+  phone: '+90 533 305 92 29',
+  mobile: '+90 533 305 92 29',
   email: 'gelisimteknikiklimlendirme@gmail.com',
   hours: 'Pzt - Cmt: 09:00 - 19:00',
-  telHref: 'tel:+902323487948',
-  mobileHref: 'tel:+905322830594',
+  telHref: 'tel:+905333059229',
+  mobileHref: 'tel:+905333059229',
   whatsappHref:
-    'https://wa.me/905322830594?text=Merhaba%2C%20teknik%20servis%20hizmeti%20almak%20istiyorum.',
+    'https://wa.me/905333059229?text=Merhaba%2C%20teknik%20servis%20hizmeti%20almak%20istiyorum.',
 };
 
 export const navLinks = [

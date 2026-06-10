@@ -5,10 +5,20 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    @apply overflow-x-hidden;
   }
 
   body {
-    @apply bg-slate-50 font-sans text-ink antialiased;
+    @apply overflow-x-hidden bg-slate-50 font-sans text-ink antialiased;
+  }
+
+  #root {
+    @apply overflow-x-hidden;
+  }
+
+  img,
+  iframe {
+    @apply max-w-full;
   }
 
   input,
@@ -24,7 +34,7 @@
 
 @layer components {
   .section {
-    @apply scroll-mt-20 py-14 sm:py-20;
+    @apply scroll-mt-20 py-12 sm:py-16 lg:py-20;
   }
 
   .section-heading {
@@ -36,7 +46,7 @@
   }
 
   .section-heading h2 {
-    @apply mt-3 text-3xl font-black leading-tight text-ink sm:text-4xl lg:text-5xl;
+    @apply mt-3 text-2xl font-black leading-tight text-ink sm:text-4xl lg:text-5xl;
   }
 
   .section-heading p {
@@ -53,7 +63,7 @@
   }
 
   .btn {
-    @apply inline-flex min-h-12 items-center justify-center gap-2 rounded-md px-5 py-3 text-sm font-black shadow-sm transition duration-200 hover:-translate-y-0.5 focus:outline-none focus:ring-4;
+    @apply inline-flex min-h-12 items-center justify-center gap-2 rounded-md px-4 py-3 text-sm font-black shadow-sm transition duration-200 hover:-translate-y-0.5 focus:outline-none focus:ring-4 sm:px-5;
   }
 
   .btn-xl {
@@ -110,24 +120,41 @@
   }
 
   .service-card {
-    @apply rounded-md border border-slate-200 bg-white p-6 shadow-sm transition duration-200 hover:-translate-y-1 hover:border-brand-200 hover:shadow-card;
+    @apply relative overflow-hidden rounded-[24px] border border-slate-200 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-rose-200 hover:shadow-xl sm:p-8;
+  }
+
+  .service-card::before {
+    @apply pointer-events-none absolute bottom-8 left-0 top-8 w-1 rounded-r-full bg-rose-500 opacity-0 transition-opacity duration-300 content-[''];
+  }
+
+  .service-card:hover::before,
+  .service-card-featured::before {
+    @apply opacity-100;
   }
 
   .service-card h3,
   .why-card h3 {
-    @apply mt-5 text-xl font-black text-ink;
+    @apply mt-5 break-words text-lg font-black text-slate-950 sm:mt-6 sm:text-xl;
   }
 
   .service-card p {
-    @apply mt-3 text-sm font-medium leading-6 text-slate-700;
+    @apply mt-3 text-sm font-medium leading-6 text-slate-600;
+  }
+
+  .service-icon-box {
+    @apply flex h-14 w-14 items-center justify-center rounded-2xl bg-rose-50 text-red-500 ring-1 ring-rose-100 transition duration-300 group-hover:scale-105 group-hover:bg-rose-100 group-hover:text-red-600;
+  }
+
+  .service-check {
+    @apply text-red-500;
   }
 
   .icon-box {
     @apply flex h-14 w-14 items-center justify-center rounded-md bg-brand-50 text-brand-800 ring-1 ring-brand-100;
   }
 
- .brand-card {
-  @apply relative flex h-24 items-center justify-center overflow-hidden rounded-md border border-slate-200 bg-white px-4 text-center text-sm font-black text-slate-800 shadow-sm transition duration-300 hover:-translate-y-2 hover:scale-[1.03] hover:border-brand-200 hover:bg-brand-50 hover:text-brand-900 hover:shadow-2xl;
+.brand-card {
+  @apply relative flex h-20 items-center justify-center overflow-hidden rounded-md border border-slate-200 bg-white px-3 text-center text-sm font-black text-slate-800 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-brand-200 hover:bg-brand-50 hover:text-brand-900 hover:shadow-card sm:h-24 sm:px-4 sm:hover:-translate-y-2 sm:hover:scale-[1.03] sm:hover:shadow-2xl;
 }
 
   .brand-card::before {
@@ -140,7 +167,7 @@
   }
 
   .why-card {
-    @apply rounded-md bg-white/10 p-6 ring-1 ring-white/15 transition duration-200 hover:-translate-y-1 hover:bg-white/15 hover:shadow-2xl;
+    @apply rounded-md bg-white/10 p-5 ring-1 ring-white/15 transition duration-200 hover:-translate-y-1 hover:bg-white/15 hover:shadow-2xl sm:p-6;
   }
 
   .why-card h3 {
@@ -152,11 +179,11 @@
   }
 
   .contact-panel {
-    @apply rounded-md border border-slate-200 bg-white p-6 shadow-card ring-1 ring-slate-200 transition duration-200 sm:p-8;
+    @apply rounded-md border border-slate-200 bg-white p-5 shadow-card ring-1 ring-slate-200 transition duration-200 sm:p-8;
   }
 
   .contact-row {
-    @apply flex items-start gap-3 rounded-md border border-slate-200 bg-slate-50 p-4 transition duration-200 hover:-translate-y-1 hover:border-brand-200 hover:bg-white hover:shadow-card;
+    @apply flex items-start gap-3 rounded-md border border-slate-200 bg-slate-50 p-3 transition duration-200 hover:-translate-y-1 hover:border-brand-200 hover:bg-white hover:shadow-card sm:p-4;
   }
 
   .footer-link {

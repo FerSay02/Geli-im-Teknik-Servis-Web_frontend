@@ -92,7 +92,7 @@ function Contact() {
             </p>
 
             <div className="mt-7 space-y-4">
-              <ContactRow icon={Phone} label="Telefon" value={company.phone} href="tel:02323487948" />
+              <ContactRow icon={Phone} label="Telefon" value={company.phone} href={company.telHref} />
               <ContactRow icon={Smartphone} label="Mobil / WhatsApp" value={company.mobile} href={company.whatsappHref} />
               <ContactRow icon={Mail} label="E-posta" value={company.email} href={`mailto:${company.email}`} />
               <ContactRow icon={MapPin} label="Adres" value={company.address} />
@@ -100,7 +100,7 @@ function Contact() {
             </div>
 
             <div className="mt-7 grid gap-3 sm:grid-cols-2">
-              <a className="btn btn-primary justify-center" href="tel:02323487948">
+              <a className="btn btn-primary justify-center" href={company.telHref}>
                 <Phone size={19} />
                 Telefon Et
               </a>

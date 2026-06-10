@@ -8,21 +8,21 @@ function Header() {
   const closeMenu = () => setIsOpen(false);
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-brand-950/95 text-white shadow-lg backdrop-blur">
-      <div className="mx-auto flex h-24 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
-        <a href="#hero" className="flex min-w-0 items-center gap-3 sm:gap-4" onClick={closeMenu}>
-          <span className="flex h-20 w-20 shrink-0 items-center justify-center overflow-visible sm:h-28 sm:w-28 lg:h-32 lg:w-32">
-            <img className="h-full w-full scale-[2.25] object-contain drop-shadow-2xl" src="/site-logo.png" alt={`${company.shortName} logo`} />
+    <header className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-brand-950/90 text-white shadow-[0_12px_35px_rgba(2,6,23,0.22)] backdrop-blur-xl">
+      <div className="mx-auto flex h-20 max-w-7xl items-center justify-between gap-3 px-4 py-3 sm:px-6 lg:h-24 lg:gap-6 lg:px-8">
+        <a href="#hero" className="flex min-w-0 max-w-[calc(100%-3.25rem)] items-center gap-2 sm:gap-3 lg:max-w-none lg:shrink-0" onClick={closeMenu}>
+          <span className="flex h-12 w-12 shrink-0 items-center justify-center overflow-visible sm:h-16 sm:w-16 lg:h-20 lg:w-20">
+            <img className="h-full w-full scale-[1.7] object-contain brightness-0 invert drop-shadow-xl lg:scale-[1.85]" src="/site-logo.png" alt={`${company.shortName} logo`} />
           </span>
-          <span className="min-w-0 max-w-[210px] sm:max-w-[360px] lg:max-w-none">
-            <span className="block text-base font-black leading-tight tracking-wide text-white sm:text-xl">GELİŞİM TEKNİK</span>
-            <span className="mt-1 block text-[10px] font-extrabold uppercase leading-snug text-blue-100 sm:text-xs">
+          <span className="min-w-0 max-w-[180px] sm:max-w-[360px] lg:max-w-[480px] xl:max-w-[560px]">
+            <span className="block truncate text-sm font-black leading-none tracking-[0.05em] text-white sm:text-lg lg:text-xl">GELİŞİM TEKNİK</span>
+            <span className="mt-1 block truncate text-[10px] font-bold uppercase leading-tight tracking-[0.04em] text-blue-100/80 sm:text-xs">
               Isıtma Soğutma VRF Sistemleri Beyaz Eşya Televizyon Bilgisayar
             </span>
           </span>
         </a>
 
-        <nav className="hidden items-center gap-8 lg:flex" aria-label="Ana menü">
+        <nav className="hidden items-center gap-7 lg:flex" aria-label="Ana menü">
           {navLinks.map((link) => (
             <a key={link.href} className="nav-link" href={link.href}>
               {link.label}
@@ -31,7 +31,7 @@ function Header() {
         </nav>
 
         <div className="hidden items-center gap-3 lg:flex">
-          <a className="btn btn-light" href={company.telHref}>
+          <a className="btn btn-light min-h-11 px-4" href={company.telHref}>
             <Phone size={18} />
             Hemen Ara
           </a>
@@ -48,7 +48,7 @@ function Header() {
       </div>
 
       {isOpen && (
-        <div className="animate-fade-up border-t border-white/10 bg-brand-950 px-4 pb-5 shadow-2xl lg:hidden">
+        <div className="animate-fade-up border-t border-white/10 bg-brand-950/95 px-4 pb-5 shadow-2xl backdrop-blur-xl lg:hidden">
           <nav className="mx-auto flex max-w-7xl flex-col gap-1 pt-3" aria-label="Mobil menü">
             {navLinks.map((link) => (
               <a key={link.href} className="rounded-md px-3 py-3 text-sm font-bold text-blue-50 transition hover:bg-white/10" href={link.href} onClick={closeMenu}>

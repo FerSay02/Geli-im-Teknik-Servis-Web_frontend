@@ -7,18 +7,18 @@ function Footer() {
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-[1.4fr_0.8fr_0.8fr_1fr]">
           <div>
-            <div className="flex items-center gap-3">
-              <span className="flex h-24 w-24 shrink-0 items-center justify-center overflow-visible">
-                <img className="h-full w-full scale-[2.25] object-contain drop-shadow-2xl" src="/site-logo.png" alt={`${company.shortName} logo`} />
+            <div className="flex min-w-0 items-center gap-3">
+              <span className="flex h-16 w-16 shrink-0 items-center justify-center overflow-visible sm:h-20 sm:w-20">
+                <img className="h-full w-full scale-[1.9] object-contain drop-shadow-2xl sm:scale-[2.1]" src="/site-logo.png" alt={`${company.shortName} logo`} />
               </span>
-              <div>
+              <div className="min-w-0">
                 <strong className="block text-xl font-black">GELİŞİM TEKNİK</strong>
-                <span className="mt-1 block max-w-xs text-xs font-bold uppercase leading-5 text-blue-100">
+                <span className="mt-1 block max-w-xs break-words text-xs font-bold uppercase leading-5 text-blue-100">
                   Isıtma Soğutma VRF Sistemleri Beyaz Eşya Televizyon Bilgisayar
                 </span>
               </div>
             </div>
-            <p className="mt-4 max-w-sm text-sm leading-6 text-slate-300">{footer.description}</p>
+            <p className="mt-4 max-w-sm break-words text-sm leading-6 text-slate-300">{footer.description}</p>
           </div>
 
           <FooterList title="Hizmetler" items={footer.services} />
@@ -42,7 +42,7 @@ function Footer() {
           </div>
         </div>
 
-        <div className="mt-10 border-t border-white/10 pt-6 text-sm text-slate-400">{footer.copyright}</div>
+        <div className="mt-10 break-words border-t border-white/10 pt-6 text-sm text-slate-400">{footer.copyright}</div>
       </div>
     </footer>
   );
