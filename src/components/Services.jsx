@@ -1,8 +1,8 @@
-import { Check, Fan, Flame, Microwave, Refrigerator, Snowflake, WashingMachine, Wrench } from 'lucide-react';
-import SectionHeading from './SectionHeading.jsx';
+import { Check, Flame, Refrigerator, Snowflake, WashingMachine, Wrench } from 'lucide-react';
 import { services, servicesIntro } from '../data/siteData.js';
+import SectionHeading from './SectionHeading.jsx';
 
-const icons = [WashingMachine, Refrigerator, DishwasherIcon, Microwave, Snowflake, Flame, Fan];
+const icons = [Refrigerator, WashingMachine, DishwasherIcon, Snowflake, Flame];
 
 function DishwasherIcon({ size = 28, strokeWidth = 2.2 }) {
   return (
@@ -22,20 +22,21 @@ function Services() {
     <section id="hizmetler" className="section bg-slate-50">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeading {...servicesIntro} />
-        <div className="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+
+        <div className="mt-7 grid gap-4 md:grid-cols-2 xl:grid-cols-5">
           {services.map((service, index) => {
             const Icon = icons[index] || Wrench;
             return (
-              <article key={service.title} className={`service-card group ${index === 0 ? 'service-card-featured' : ''} ${index === services.length - 1 ? 'xl:col-span-3' : ''}`}>
+              <article key={service.title} className="service-card group">
                 <div className="service-icon-box">
                   <Icon size={28} strokeWidth={2.2} />
                 </div>
                 <h3>{service.title}</h3>
                 <p>{service.description}</p>
 
-                <div className="my-6 border-t border-dashed border-slate-200" />
+                <strong className="mt-4 block text-sm font-black leading-6 text-brand-900">{service.benefit}</strong>
 
-                <ul className="space-y-3">
+                <ul className="mt-4 space-y-2">
                   {service.features.map((feature) => (
                     <li key={feature} className="flex gap-2 text-sm font-semibold leading-6 text-slate-800">
                       <Check size={17} className="service-check mt-1 shrink-0" />

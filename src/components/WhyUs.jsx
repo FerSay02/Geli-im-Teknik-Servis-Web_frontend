@@ -9,7 +9,7 @@ function WhyUs() {
     <section id="neden-biz" className="section bg-brand-900 text-white">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeading title={whyUsSection.title} subtitle={whyUsSection.subtitle} description={whyUsSection.description} />
-        <div className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-7 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
           {whyUsSection.items.map((item, index) => {
             const Icon = icons[index] || BadgeCheck;
             return (

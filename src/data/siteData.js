@@ -10,142 +10,211 @@ export const company = {
   telHref: 'tel:+905333059229',
   mobileHref: 'tel:+905333059229',
   whatsappHref:
-    'https://wa.me/905333059229?text=Merhaba%2C%20teknik%20servis%20hizmeti%20almak%20istiyorum.',
+    'https://wa.me/905333059229?text=Merhaba%2C%20%C4%B0zmir%20Bornova%20teknik%20servis%20i%C3%A7in%20randevu%20almak%20istiyorum.',
 };
 
 export const navLinks = [
-  { label: 'Hizmetlerimiz', href: '#hizmetler' },
-  { label: 'Markalar', href: '#markalar' },
+  { label: 'Hizmetler', href: '#hizmetler' },
   { label: 'Neden Biz?', href: '#neden-biz' },
+  { label: 'SSS', href: '#sss' },
   { label: 'İletişim', href: '#iletisim' },
 ];
 
 export const hero = {
-  eyebrow: "İzmir'in güvenilir teknik servisi",
-  title: 'Beyaz eşya ve iklimlendirme arızalarınıza aynı gün çözüm',
+  eyebrow: 'İzmir Bornova yerinde teknik servis',
+  title: 'İzmir Bornova Beyaz Eşya, Klima ve Kombi Özel Servisi',
   description:
-    "Çamaşır makinesinden kombiye, klimadan buzdolabına; deneyimli kadromuz, modern teşhis cihazlarımız ve orijinal yedek parça garantisiyle Bornova ve tüm İzmir'de yanınızdayız.",
-  badges: ['Aynı Gün Müdahale', 'İşçilik Garantili', 'Uzman Kadro'],
+    'Buzdolabı, çamaşır makinesi, bulaşık makinesi, klima ve kombi arızalarında yerinde servis, hızlı arıza tespiti ve 1 yıl işçilik garantisi.',
+  badges: ['Aynı Gün Servis', 'Deneyimli Teknik Ekip', '1 Yıl İşçilik Garantisi', 'Hızlı Arıza Tespiti'],
+  trustBadges: ['Aynı Gün Servis', 'Yerinde Servis', 'Garantili İşçilik', 'Hızlı Destek'],
   stats: [
-    { value: '5.000+', label: 'Tamamlanan Servis' },
-    { value: '4.9 / 5', label: 'Müşteri Memnuniyeti' },
+    { value: '5.000+', label: 'Tamamlanan servis talebi' },
+    { value: '4.9/5', label: 'Müşteri memnuniyeti' },
   ],
 };
 
 export const servicesIntro = {
-  title: 'Hizmetlerimiz',
-  subtitle: 'Her marka, her model için profesyonel servis',
+  title: 'Beyaz Eşya, Klima ve Kombi Servisi',
+  subtitle: 'Servis hizmetleri',
   description:
-    'Uzman teknisyenlerimiz; modern teşhis cihazları ve orijinal yedek parça ile cihazlarınızı ilk günkü performansına döndürür.',
+    'İzmir Bornova merkezli ekibimiz, arızayı yerinde tespit eder ve onayınızdan sonra hızlı, garantili işlem yapar.',
 };
 
 export const services = [
   {
-    title: 'Çamaşır Makinesi Servisi',
-    description:
-      'Su almama, sıkma yapmama, ısıtma ve elektronik kart arızalarına yerinde profesyonel çözüm.',
-    features: ['Tambur & rulman değişimi', 'Pompa & rezistans onarımı', 'Elektronik kart tamiri'],
+    title: 'Buzdolabı Servisi',
+    description: 'Soğutmama, ses yapma, su akıtma ve gaz kaçağı sorunlarında hızlı müdahale.',
+    benefit: 'Gıdalarınız bozulmadan aynı gün çözüm için arayın.',
+    features: ['Gaz ve kaçak kontrolü', 'Fan, termostat ve kart onarımı', 'No-Frost sistem arızaları'],
   },
   {
-    title: 'Buzdolabı Servisi',
-    description: 'Soğutmama, ses yapma, su akıtma ve gaz kaçağı problemleri için kalıcı tamir.',
-    features: ['Gaz şarjı & kompresör', 'No-Frost sistem onarımı', 'Termostat & fan değişimi'],
+    title: 'Çamaşır Makinesi Servisi',
+    description: 'Su almama, sıkma yapmama, ses ve elektronik kart arızalarında yerinde servis.',
+    benefit: 'Program ve mekanik arızalarda net teşhis.',
+    features: ['Pompa ve rezistans değişimi', 'Rulman ve tambur kontrolü', 'Elektronik kart tamiri'],
   },
   {
     title: 'Bulaşık Makinesi Servisi',
-    description: 'Yıkamama, su tutmama, kurutma ve hata kodu sorunlarına uzman müdahale.',
-    features: ['Pompa & sirkülasyon onarımı', 'Hata kodu çözümü', 'Su giriş valfi değişimi'],
-  },
-  {
-    title: 'Fırın & Ocak Servisi',
-    description: 'Ankastre fırın, ocak ve davlumbaz arızaları için yerinde tamir hizmeti.',
-    features: ['Rezistans & termostat', 'Ateşleme & gaz ayarı', 'Cam ve menteşe değişimi'],
+    description: 'Yıkamama, su boşaltmama, kurutma ve hata kodu problemlerinde garantili işçilik.',
+    benefit: 'Parça değişmeden önce arıza kaynağı netleştirilir.',
+    features: ['Pompa ve valf onarımı', 'Su kaçak tespiti', 'Hata kodu çözümü'],
   },
   {
     title: 'Klima Servisi',
-    description: 'Bakım, gaz dolumu, montaj-demontaj ve elektronik kart arızaları için tek adres.',
-    features: ['Yıllık bakım & temizlik', 'Gaz dolumu & kaçak tespiti', 'Profesyonel montaj'],
+    description: 'Klima bakım, gaz kontrolü, montaj, demontaj ve soğutmama arızalarında destek.',
+    benefit: 'Daha verimli soğutma ve düşük enerji tüketimi.',
+    features: ['Bakım ve filtre temizliği', 'Gaz ve kaçak kontrolü', 'Montaj ve demontaj'],
   },
   {
     title: 'Kombi Servisi',
-    description: 'Yanmama, ısıtmama, basınç ve sıcak su problemleri için güvenilir kombi servisi.',
-    features: ['Yıllık periyodik bakım', 'Eşanjör & sirkülasyon pompası', 'Elektronik kart tamiri'],
-  },
-  {
-    title: 'Soğutma Sistemleri',
-    description:
-      'Endüstriyel ve ticari tip soğutucular, derin dondurucular ve soğuk hava depoları için profesyonel servis çözümleri.',
-    features: ['Endüstriyel soğutucu bakımı', 'Soğuk oda kurulum & onarım', 'Kompresör & gaz sistemleri'],
+    description: 'Sıcak su, basınç, ateşleme ve ısıtmama arızalarında deneyimli kombi servisi.',
+    benefit: 'Güvenli çalışma ve düzenli sıcak su için hızlı servis.',
+    features: ['Periyodik bakım', 'Eşanjör ve pompa kontrolü', 'Elektronik kart arızaları'],
   },
 ];
 
 export const brandsSection = {
-  title: 'Markalar',
-  subtitle: 'Hizmet verdiğimiz başlıca markalar',
+  title: 'Hizmet Verdiğimiz Markalar',
+  subtitle: 'Marka desteği',
   description:
-    'Tüm büyük markalar için orijinal yedek parça ve garantili işçilik. Listede markanızı göremezseniz lütfen bize ulaşın.',
-  brands: ['Arçelik', 'Beko', 'Vestel', 'Bosch', 'Siemens', 'Profilo', 'Samsung', 'LG', 'Altus', 'Regal', 'Hoover', 'Indesit', 'Ariston', 'Hotpoint'],
+    'Listelenen markalar için özel teknik servis desteği verilir. Gelişim Teknik, bu markaların yetkili servisi değildir.',
 };
 
 export const whyUsSection = {
-  title: 'Neden Biz?',
-  subtitle: 'Güvenilir, hızlı ve şeffaf teknik servis',
+  title: 'Neden Bizi Tercih Etmelisiniz?',
+  subtitle: 'Güven veren servis deneyimi',
   description:
-    'Sadece arızayı tamir etmiyor; cihazınızın uzun ömürlü çalışması için bütüncül bir hizmet sunuyoruz.',
+    'Google Ads ziyaretçileri için önemli olan şey basit: hızlı ulaşım, net bilgi, yerinde çözüm ve yapılan işin arkasında duran ekip.',
   items: [
     {
       title: 'Aynı Gün Servis',
-      description: 'Talebinizi aldığımız gün, mümkün olan en kısa sürede yerinde müdahale ederiz.',
+      description: 'Uygun randevu durumuna göre Bornova ve çevresine aynı gün teknik servis yönlendiririz.',
     },
     {
-      title: 'İşçilik Garantisi',
-      description: 'Yapılan tüm işlemlere yazılı garanti veriyor, arkasında duruyoruz.',
+      title: '1 Yıl İşçilik Garantisi',
+      description: 'Yaptığımız işçilik için 1 yıl garanti verir, işlem sonrası destek sağlarız.',
     },
     {
-      title: 'Orijinal Yedek Parça',
-      description: 'Tüm marka ve modellerde sadece orijinal yedek parça kullanıyoruz.',
+      title: 'Yerinde Arıza Tespiti',
+      description: 'Cihazınızı gereksiz yere taşımadan, arızayı adresinizde netleştiririz.',
     },
     {
-      title: 'Şeffaf Fiyatlandırma',
-      description: 'İşlem öncesi net fiyat bilgisi; sürpriz ek ücret yok, gizli kalem yok.',
+      title: 'Şeffaf Bilgilendirme',
+      description: 'İşlem başlamadan önce arıza, parça ve işçilik hakkında açık bilgi veririz.',
     },
     {
-      title: 'Uzman Teknik Kadro',
-      description: 'Yılların deneyimine sahip, sürekli eğitimlerle güncel kalan teknisyen ekibi.',
+      title: 'Deneyimli Teknik Ekip',
+      description: 'Beyaz eşya, klima ve kombi arızalarında pratik saha deneyimine sahip teknisyenler.',
     },
     {
-      title: 'Hafta Sonu Destek',
-      description: 'Acil arızalarınız için hafta sonu da ulaşılabilir, çözüm odaklı bir destek.',
+      title: 'Hızlı Destek',
+      description: 'Telefon ve WhatsApp üzerinden hızlı dönüş alabilir, servis randevusu oluşturabilirsiniz.',
     },
   ],
 };
 
+export const processSteps = [
+  { title: 'Talep Alınır', description: 'Telefon, WhatsApp veya form üzerinden arıza ve adres bilgisi alınır.' },
+  { title: 'Randevu Planlanır', description: 'Size en uygun saat aralığı için servis yönlendirmesi yapılır.' },
+  { title: 'Arıza Tespit Edilir', description: 'Teknisyen cihazı yerinde kontrol eder ve yapılacak işlemi açıklar.' },
+  { title: 'Garantili İşlem Yapılır', description: 'Onayınızla tamir tamamlanır ve 1 yıl işçilik garantisi sunulur.' },
+];
+
+export const testimonials = [
+  {
+    name: 'M. Kaya',
+    location: 'Bornova',
+    text: 'Buzdolabı arızası için aynı gün geldiler. Sorunu net anlattılar, işlem sonrası cihaz sorunsuz çalışıyor.',
+  },
+  {
+    name: 'E. Demir',
+    location: 'Bayraklı',
+    text: 'Kombi sıcak su problemi için WhatsApp üzerinden ulaştım. Hızlı dönüş ve temiz işçilik aldım.',
+  },
+  {
+    name: 'S. Yılmaz',
+    location: 'Karşıyaka',
+    text: 'Klima bakımını zamanında yaptılar. Fiyat ve işlem konusunda baştan bilgilendirme yapılması güven verdi.',
+  },
+];
+
+export const faqs = [
+  {
+    question: 'İzmir Bornova içinde aynı gün servis veriyor musunuz?',
+    answer: 'Evet. Uygun randevu yoğunluğuna göre Bornova ve yakın ilçelere aynı gün servis yönlendirmesi yapıyoruz.',
+  },
+  {
+    question: 'İşçilik garantisi ne kadar sürer?',
+    answer: 'Yapılan servis işçiliği için 1 yıl garanti veriyoruz. Parça garantisi, kullanılan parçanın türüne göre ayrıca belirtilir.',
+  },
+  {
+    question: 'Hangi cihazlar için servis veriyorsunuz?',
+    answer: 'Buzdolabı, çamaşır makinesi, bulaşık makinesi, klima ve kombi arızaları için yerinde teknik servis sağlıyoruz.',
+  },
+  {
+    question: 'WhatsApp üzerinden servis randevusu alabilir miyim?',
+    answer: 'Evet. WhatsApp butonuna dokunarak cihaz türü, arıza açıklaması ve adresinizi iletebilirsiniz.',
+  },
+];
+
+export const serviceAreas = [
+  {
+    district: 'Bornova',
+    title: 'Bornova Beyaz Eşya, Klima ve Kombi Servisi',
+    description:
+      'Yeşilova merkezli ekibimiz Bornova genelinde buzdolabı, çamaşır makinesi, bulaşık makinesi, klima ve kombi arızalarına hızlı servis sağlar.',
+  },
+  {
+    district: 'Bayraklı',
+    title: 'Bayraklı Teknik Servis',
+    description:
+      'Bayraklı bölgesinde beyaz eşya, klima ve kombi arızaları için telefon veya WhatsApp üzerinden servis kaydı oluşturabilirsiniz.',
+  },
+  {
+    district: 'Karşıyaka',
+    title: 'Karşıyaka Beyaz Eşya ve Klima Servisi',
+    description:
+      'Karşıyaka adreslerinde klima bakım, buzdolabı arızası ve kombi sıcak su problemleri için yerinde teknik destek sunulur.',
+  },
+  {
+    district: 'Konak',
+    title: 'Konak Kombi ve Beyaz Eşya Servisi',
+    description:
+      'Konak ilçesinde acil cihaz arızaları için hızlı arıza tespiti, şeffaf bilgilendirme ve garantili işçilik sağlanır.',
+  },
+  {
+    district: 'Buca',
+    title: 'Buca Teknik Servis',
+    description:
+      'Buca bölgesinde beyaz eşya, klima ve kombi servis talepleri için randevu planlaması yapılır.',
+  },
+];
+
 export const contactSection = {
   title: 'İletişim',
-  subtitle: 'Servis talebi oluşturun',
+  subtitle: 'Servis randevusu oluşturun',
   description:
-    'Telefon, e-posta veya formu doldurarak bize ulaşın. Ekibimiz en kısa sürede sizinle iletişime geçecektir.',
-  successMessage:
-    'Talebiniz alınmıştır. En kısa sürede sizinle iletişime geçeceğiz.',
+    'Acil arızalar için telefon veya WhatsApp en hızlı yoldur. Formu doldurduğunuzda ekibimiz sizi geri arar.',
+  successMessage: 'Talebiniz alındı. En kısa sürede sizinle iletişime geçeceğiz.',
   serviceTypes: [
-    'Çamaşır Makinesi Servisi',
     'Buzdolabı Servisi',
+    'Çamaşır Makinesi Servisi',
     'Bulaşık Makinesi Servisi',
-    'Fırın & Ocak Servisi',
     'Klima Servisi',
     'Kombi Servisi',
-    'Soğutma Sistemleri',
     'Diğer',
   ],
 };
 
+export const legalNotice = 'Gelişim Teknik özel teknik servis hizmeti sunar. Marka yetkili servisi değildir.';
+
 export const footer = {
   description:
-    'İzmir Bornova merkezli, beyaz eşya, klima, kombi ve soğutma sistemleri için garantili teknik servis hizmeti.',
-  services: ['Çamaşır Makinesi', 'Buzdolabı', 'Bulaşık Makinesi', 'Klima', 'Kombi'],
+    'İzmir Bornova merkezli beyaz eşya, klima ve kombi teknik servisi. Aynı gün servis, hızlı destek ve 1 yıl işçilik garantisi.',
+  services: ['Buzdolabı Servisi', 'Çamaşır Makinesi Servisi', 'Bulaşık Makinesi Servisi', 'Klima Servisi', 'Kombi Servisi'],
   corporate: [
     { label: 'Neden Biz?', href: '#neden-biz' },
-    { label: 'Markalar', href: '#markalar' },
+    { label: 'SSS', href: '#sss' },
     { label: 'İletişim', href: '#iletisim' },
   ],
   copyright: '© 2026 Gelişim Teknik Servis. Tüm hakları saklıdır.',
