@@ -1,9 +1,10 @@
 import { Clock, Mail, MapPin, Phone, Send, Smartphone } from 'lucide-react';
 import { useState } from 'react';
 import { company, contactSection, legalNotice, serviceAreas } from '../data/siteData.js';
-import { isSupabaseConfigured, supabase } from '../lib/supabase.js';
 import { trackConversion } from '../lib/tracking.js';
 import SectionHeading from './SectionHeading.jsx';
+
+const WEB3FORMS_ENDPOINT = 'https://api.web3forms.com/submit';
 
 const initialForm = {
   name: '',
@@ -49,27 +50,41 @@ function Contact() {
       district: form.district,
     });
 
-    if (!isSupabaseConfigured || !supabase) {
-      setSubmitError('Servis talep sistemi henüz yapılandırılmadı. Lütfen telefon veya WhatsApp üzerinden iletişime geçin.');
+    const accessKey = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY;
+    const errorMessage = 'Talebiniz gönderilemedi. Lütfen telefon veya WhatsApp üzerinden iletişime geçin.';
+
+    if (!accessKey) {
+      setSubmitError(errorMessage);
       return;
     }
 
     setIsSubmitting(true);
 
     try {
-      const { error } = await supabase.from('service_requests').insert({
-        full_name: form.name.trim(),
-        phone: form.phone.trim(),
-        email: form.email.trim() || null,
-        service_type: form.serviceType,
-        message: `Servis bölgesi: ${form.district}\n\n${form.message.trim()}`,
+      const response = await fetch(WEB3FORMS_ENDPOINT, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+        body: JSON.stringify({
+          access_key: accessKey,
+          subject: 'Yeni Servis Talebi - Gelişim Teknik',
+          from_name: 'Gelişim Teknik Web Sitesi',
+          name: form.name.trim(),
+          phone: form.phone.trim(),
+          email: form.email.trim(),
+          district: form.district,
+          serviceType: form.serviceType,
+          message: form.message.trim(),
+        }),
       });
+      const result = await response.json();
 
-      if (error) {
-        setSubmitError('Talebiniz gönderilirken bir sorun oluştu. Lütfen telefonla veya WhatsApp ile bize ulaşın.');
+      if (!response.ok || !result.success) {
+        setSubmitError(errorMessage);
         return;
       }
-
       trackConversion('lead_form_success', {
         service_type: form.serviceType,
         district: form.district,
@@ -82,7 +97,7 @@ function Contact() {
       setSuccess(contactSection.successMessage);
       setForm(initialForm);
     } catch {
-      setSubmitError('Talebiniz gönderilirken bir sorun oluştu. Lütfen telefonla veya WhatsApp ile bize ulaşın.');
+      setSubmitError(errorMessage);
     } finally {
       setIsSubmitting(false);
     }
