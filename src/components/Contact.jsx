@@ -5,6 +5,7 @@ import { trackConversion } from '../lib/tracking.js';
 import SectionHeading from './SectionHeading.jsx';
 
 const WEB3FORMS_ENDPOINT = 'https://api.web3forms.com/submit';
+const WEB3FORMS_ACCESS_KEY = '9e7f10c9-ad4b-48de-89c2-fab2c6568ade';
 
 const initialForm = {
   name: '',
@@ -50,12 +51,73 @@ function Contact() {
       district: form.district,
     });
 
-    const accessKey = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY;
+    const accessKey = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY || WEB3FORMS_ACCESS_KEY;
     const errorMessage = 'Talebiniz gönderilemedi. Lütfen telefon veya WhatsApp üzerinden iletişime geçin.';
+    console.info('Web3Forms access key status.', {
+      hasEnvKey: Boolean(import.meta.env.VITE_WEB3FORMS_ACCESS_KEY),
+      usingFallbackKey: !import.meta.env.VITE_WEB3FORMS_ACCESS_KEY,
+      keyLength: accessKey.length,
+    });
 
     if (!accessKey) {
+      console.error('Web3Forms access key is missing. Check VITE_WEB3FORMS_ACCESS_KEY in the deployment environment.');
       setSubmitError(errorMessage);
       return;
+    }
+
+    const leadName = form.name.trim();
+    const leadPhone = form.phone.trim();
+    const leadEmail = form.email.trim();
+    const leadDistrict = form.district;
+    const leadServiceType = form.serviceType;
+    const leadMessage = form.message.trim();
+    const submittedAt = new Intl.DateTimeFormat('tr-TR', {
+      dateStyle: 'long',
+      timeStyle: 'short',
+      timeZone: 'Europe/Istanbul',
+    }).format(new Date());
+    const formattedMessage = [
+      'YENİ SERVİS TALEBİ',
+      'Gelişim Teknik web sitesi üzerinden yeni bir servis talebi oluşturuldu.',
+      '',
+      'MÜŞTERİ BİLGİLERİ',
+      `Ad Soyad: ${leadName}`,
+      `Telefon: ${leadPhone}`,
+      `E-posta: ${leadEmail || 'Belirtilmedi'}`,
+      '',
+      'SERVİS BİLGİLERİ',
+      `Servis Bölgesi: ${leadDistrict}`,
+      `Servis Türü: ${leadServiceType}`,
+      `Talep Tarihi: ${submittedAt}`,
+      '',
+      'ARIZA AÇIKLAMASI',
+      leadMessage,
+      '',
+      'ÖNERİLEN AKSİYON',
+      'Müşteri telefon veya e-posta üzerinden hızlıca aranarak randevu planlanmalıdır.',
+    ].join('\n');
+    const payload = {
+      access_key: accessKey,
+      subject: `Yeni Servis Talebi | ${leadServiceType} | ${leadDistrict}`,
+      from_name: 'Gelişim Teknik Web Sitesi',
+      name: leadName,
+      phone: leadPhone,
+      email: leadEmail,
+      district: leadDistrict,
+      serviceType: leadServiceType,
+      message: formattedMessage,
+      'Talep Durumu': 'Yeni Talep',
+      'Talep Tarihi': submittedAt,
+      'Ad Soyad': leadName,
+      'Telefon': leadPhone,
+      'E-posta': leadEmail || 'Belirtilmedi',
+      'Servis Bölgesi': leadDistrict,
+      'Servis Türü': leadServiceType,
+      'Arıza Açıklaması': leadMessage,
+    };
+
+    if (leadEmail) {
+      payload.replyto = leadEmail;
     }
 
     setIsSubmitting(true);
@@ -67,21 +129,28 @@ function Contact() {
           'Content-Type': 'application/json',
           Accept: 'application/json',
         },
-        body: JSON.stringify({
-          access_key: accessKey,
-          subject: 'Yeni Servis Talebi - Gelişim Teknik',
-          from_name: 'Gelişim Teknik Web Sitesi',
-          name: form.name.trim(),
-          phone: form.phone.trim(),
-          email: form.email.trim(),
-          district: form.district,
-          serviceType: form.serviceType,
-          message: form.message.trim(),
-        }),
+        body: JSON.stringify(payload),
       });
-      const result = await response.json();
+      let result = null;
+
+      try {
+        result = await response.json();
+      } catch (parseError) {
+        console.error('Web3Forms response could not be parsed as JSON.', {
+          status: response.status,
+          statusText: response.statusText,
+          error: parseError,
+        });
+        setSubmitError(errorMessage);
+        return;
+      }
 
       if (!response.ok || !result.success) {
+        console.error('Web3Forms submission failed.', {
+          status: response.status,
+          statusText: response.statusText,
+          result,
+        });
         setSubmitError(errorMessage);
         return;
       }
@@ -96,7 +165,8 @@ function Contact() {
       });
       setSuccess(contactSection.successMessage);
       setForm(initialForm);
-    } catch {
+    } catch (error) {
+      console.error('Web3Forms request failed.', error);
       setSubmitError(errorMessage);
     } finally {
       setIsSubmitting(false);
