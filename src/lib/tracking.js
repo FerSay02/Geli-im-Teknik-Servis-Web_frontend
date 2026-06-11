@@ -1,10 +1,11 @@
-export function trackConversion(action, params = {}) {
-  if (typeof window === 'undefined' || typeof window.gtag !== 'function') {
+export function trackConversion(eventName, params = {}) {
+  if (typeof window === 'undefined') {
     return;
   }
 
-  window.gtag('event', action, {
-    event_category: 'conversion',
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    event: eventName,
     ...params,
   });
 }

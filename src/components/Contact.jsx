@@ -74,6 +74,11 @@ function Contact() {
         service_type: form.serviceType,
         district: form.district,
       });
+      trackConversion('lead_form_submit', {
+        service_type: form.serviceType,
+        district: form.district,
+        form_location: 'contact_form',
+      });
       setSuccess(contactSection.successMessage);
       setForm(initialForm);
     } catch {
