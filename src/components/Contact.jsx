@@ -1,4 +1,4 @@
-import { Clock, Mail, MapPin, Phone, Send, Smartphone } from 'lucide-react';
+﻿import { Clock, Mail, MapPin, Phone, Send, Smartphone } from 'lucide-react';
 import { useState } from 'react';
 import { company, contactSection, legalNotice, serviceAreas } from '../data/siteData.js';
 import { trackConversion } from '../lib/tracking.js';
@@ -259,7 +259,7 @@ function Contact() {
           <div className="px-5 py-5 sm:px-7">
             <h3 className="text-2xl font-black text-ink">Gelişim Teknik - İzmir Bornova Özel Teknik Servis</h3>
             <p className="mt-2 text-sm font-semibold leading-6 text-slate-700">
-              Yeşilova, Bornova / İzmir adresinden Bornova, Bayraklı, Karşıyaka, Konak ve Buca bölgelerine servis planlanır.
+              Yeşilova, Bornova / İzmir adresinden Bornova ve Bayraklı bölgelerine servis planlanır.
             </p>
           </div>
           <iframe
