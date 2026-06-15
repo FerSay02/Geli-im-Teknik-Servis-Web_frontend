@@ -11,7 +11,7 @@ function Hero() {
       <div className="relative mx-auto grid w-full max-w-7xl items-center gap-8 px-4 pb-8 pt-8 sm:px-6 lg:min-h-[calc(100vh-6rem)] lg:grid-cols-[1fr_0.86fr] lg:gap-12 lg:px-8 lg:py-12">
         <div className="hero-copy max-w-3xl min-w-0">
           <p className="mb-4 inline-flex max-w-full items-center gap-2 rounded-md bg-white/10 px-3 py-2 text-xs font-black text-blue-50 ring-1 ring-white/15 sm:text-sm">
-            <Wrench size={16} />
+            <Wrench size={16} className="shrink-0" />
             {hero.eyebrow}
           </p>
 
@@ -29,8 +29,8 @@ function Hero() {
               href={company.telHref}
               onClick={() => trackConversion('phone_click', { location: 'hero' })}
             >
-              <Phone size={21} />
-              Hemen Ara
+              <Phone size={21} className="shrink-0" />
+              <span className="min-w-0">Hemen Ara</span>
             </a>
             <a
               className="btn btn-whatsapp btn-xl w-full"
@@ -40,7 +40,7 @@ function Hero() {
               onClick={() => trackConversion('whatsapp_click', { location: 'hero' })}
             >
               <WhatsAppLogo />
-              WhatsApp Destek
+              <span className="min-w-0">WhatsApp Destek</span>
             </a>
           </div>
 
@@ -48,16 +48,16 @@ function Hero() {
             {hero.badges.map((badge) => (
               <span key={badge} className="inline-flex min-w-0 items-center gap-2 rounded-md bg-white/10 px-3 py-3 text-sm font-extrabold text-blue-50 ring-1 ring-white/15">
                 <CheckCircle2 size={18} className="shrink-0 text-emerald-300" />
-                {badge}
+                <span className="min-w-0 wrap-anywhere">{badge}</span>
               </span>
             ))}
           </div>
 
-          <div className="mt-7 grid grid-cols-2 gap-3 sm:max-w-lg">
+          <div className="mt-7 grid grid-cols-1 gap-3 min-[360px]:grid-cols-2 sm:max-w-lg">
             {hero.stats.map((stat) => (
-              <div key={stat.label} className="rounded-md bg-white p-4 text-ink shadow-card">
+              <div key={stat.label} className="min-w-0 rounded-md bg-white p-4 text-ink shadow-card">
                 <strong className="block text-2xl font-black text-brand-900">{stat.value}</strong>
-                <span className="mt-1 block text-xs font-bold leading-5 text-slate-700">{stat.label}</span>
+                <span className="mt-1 block text-xs font-bold leading-5 text-slate-700 wrap-anywhere">{stat.label}</span>
               </div>
             ))}
           </div>
@@ -73,11 +73,11 @@ function Hero() {
               height="912"
               fetchPriority="high"
             />
-            <div className="grid grid-cols-2 gap-px bg-slate-200">
+            <div className="grid grid-cols-1 gap-px bg-slate-200 min-[380px]:grid-cols-2">
               {hero.trustBadges.map((badge) => (
-                <div key={badge} className="flex min-h-16 items-center gap-2 bg-white px-3 py-3 text-sm font-black text-brand-900">
+                <div key={badge} className="flex min-h-16 min-w-0 items-center gap-2 bg-white px-3 py-3 text-sm font-black text-brand-900">
                   <ShieldCheck size={18} className="shrink-0 text-emerald-600" />
-                  <span>{badge}</span>
+                  <span className="min-w-0 wrap-anywhere">{badge}</span>
                 </div>
               ))}
             </div>
@@ -87,7 +87,7 @@ function Hero() {
             <p className="text-sm font-black uppercase tracking-wide text-brand-800">En çok talep edilen servisler</p>
             <div className="mt-3 flex flex-wrap gap-2">
               {services.map((service) => (
-                <a key={service.title} className="rounded-md bg-slate-100 px-3 py-2 text-xs font-black text-slate-800 transition hover:bg-brand-50 hover:text-brand-900" href="#hizmetler">
+                <a key={service.title} className="max-w-full rounded-md bg-slate-100 px-3 py-2 text-xs font-black text-slate-800 transition hover:bg-brand-50 hover:text-brand-900 wrap-anywhere" href="#hizmetler">
                   {service.title}
                 </a>
               ))}

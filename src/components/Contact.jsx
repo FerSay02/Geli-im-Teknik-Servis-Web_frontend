@@ -178,13 +178,13 @@ function Contact() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeading title={contactSection.subtitle} subtitle={contactSection.title} description={contactSection.description} />
 
-        <div className="mt-7 grid gap-5 lg:grid-cols-[0.86fr_1.14fr]">
+        <div className="mt-7 grid min-w-0 gap-5 lg:grid-cols-[0.86fr_1.14fr]">
           <div className="contact-panel">
-            <h3 className="text-2xl font-black text-ink">Hızlı iletişim</h3>
+            <h3 className="break-words text-xl font-black text-ink sm:text-2xl">Hızlı iletişim</h3>
             <p className="mt-2 text-sm font-semibold leading-6 text-slate-700">
               En hızlı dönüş için telefon veya WhatsApp bilgilerinizi kullanabilirsiniz.
             </p>
-            <p className="mt-4 rounded-md border border-amber-200 bg-amber-50 px-4 py-3 text-sm font-bold leading-6 text-amber-900">
+            <p className="mt-4 rounded-md border border-amber-200 bg-amber-50 px-3 py-3 text-sm font-bold leading-6 text-amber-900 wrap-anywhere sm:px-4">
               {legalNotice}
             </p>
 
@@ -198,7 +198,7 @@ function Contact() {
           </div>
 
           <form className="contact-panel border-brand-100 shadow-soft" onSubmit={handleSubmit} noValidate>
-            <p className="mb-5 rounded-md border border-brand-100 bg-brand-50 px-4 py-3 text-sm font-black leading-6 text-brand-900">
+            <p className="mb-5 rounded-md border border-brand-100 bg-brand-50 px-3 py-3 text-sm font-black leading-6 text-brand-900 wrap-anywhere sm:px-4">
               Acil servis için en hızlı yöntem telefon veya WhatsApp'tır.
             </p>
 
@@ -245,19 +245,19 @@ function Contact() {
               <span className="mt-2 block text-right text-xs font-semibold text-slate-500">{form.message.length}/500</span>
             </Field>
 
-            {success && <p className="mt-5 rounded-md border border-emerald-200 bg-emerald-50 px-4 py-3 text-sm font-bold text-emerald-700">{success}</p>}
-            {submitError && <p className="mt-5 rounded-md border border-red-200 bg-red-50 px-4 py-3 text-sm font-bold text-red-700">{submitError}</p>}
+            {success && <p className="mt-5 rounded-md border border-emerald-200 bg-emerald-50 px-4 py-3 text-sm font-bold text-emerald-700 wrap-anywhere">{success}</p>}
+            {submitError && <p className="mt-5 rounded-md border border-red-200 bg-red-50 px-4 py-3 text-sm font-bold text-red-700 wrap-anywhere">{submitError}</p>}
 
             <button className="btn btn-accent mt-6 w-full justify-center shadow-lg disabled:cursor-not-allowed disabled:opacity-70" type="submit" disabled={isSubmitting}>
-              <Send size={19} />
-              {isSubmitting ? 'Gönderiliyor...' : 'Servis Talebi Gönder'}
+              <Send size={19} className="shrink-0" />
+              <span className="min-w-0">{isSubmitting ? 'Gönderiliyor...' : 'Servis Talebi Gönder'}</span>
             </button>
           </form>
         </div>
 
         <div className="contact-panel mt-5 overflow-hidden p-0">
-          <div className="px-5 py-5 sm:px-7">
-            <h3 className="text-2xl font-black text-ink">Gelişim Teknik - İzmir Bornova Özel Teknik Servis</h3>
+          <div className="px-4 py-5 sm:px-7">
+            <h3 className="break-words text-xl font-black text-ink sm:text-2xl">Gelişim Teknik - İzmir Bornova Özel Teknik Servis</h3>
             <p className="mt-2 text-sm font-semibold leading-6 text-slate-700">
               Yeşilova, Bornova / İzmir adresinden Bornova ve Bayraklı bölgelerine servis planlanır.
             </p>
@@ -286,7 +286,7 @@ function ContactRow({ icon: Icon, label, value, href, eventName }) {
       </span>
       <span className="min-w-0">
         <span className="block text-xs font-bold uppercase tracking-wide text-slate-500">{label}</span>
-        <span className="mt-1 block break-words text-sm font-extrabold text-ink">{value}</span>
+        <span className="mt-1 block text-sm font-extrabold text-ink wrap-anywhere">{value}</span>
       </span>
     </>
   );

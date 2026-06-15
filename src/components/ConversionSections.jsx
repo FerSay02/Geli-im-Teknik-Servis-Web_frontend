@@ -17,11 +17,11 @@ function ConversionSections() {
 
           <ol className="mt-7 grid gap-3 sm:grid-cols-4">
             {timelineSteps.map((step, index) => (
-              <li key={step} className="relative flex items-center gap-3 rounded-md border border-slate-200 bg-slate-50 px-4 py-4 shadow-sm sm:block sm:text-center">
+              <li key={step} className="relative flex min-w-0 items-center gap-3 rounded-md border border-slate-200 bg-slate-50 px-4 py-4 shadow-sm sm:block sm:text-center">
                 <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-brand-900 text-sm font-black text-white sm:mx-auto">
                   {index + 1}
                 </span>
-                <strong className="text-sm font-black text-ink sm:mt-3 sm:block">{step}</strong>
+                <strong className="min-w-0 text-sm font-black text-ink wrap-anywhere sm:mt-3 sm:block">{step}</strong>
                 {index < timelineSteps.length - 1 && (
                   <span className="absolute -right-2 top-1/2 hidden -translate-y-1/2 text-lg font-black text-brand-700 sm:block">→</span>
                 )}
@@ -71,9 +71,9 @@ function ConversionSections() {
 
 function Badge({ icon: Icon, title }) {
   return (
-    <div className="rounded-md bg-white/10 p-4 ring-1 ring-white/15">
+    <div className="min-w-0 rounded-md bg-white/10 p-4 ring-1 ring-white/15">
       <Icon size={24} className="text-emerald-300" />
-      <strong className="mt-3 block text-sm font-black sm:text-base">{title}</strong>
+      <strong className="mt-3 block text-sm font-black wrap-anywhere sm:text-base">{title}</strong>
     </div>
   );
 }

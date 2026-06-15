@@ -34,13 +34,13 @@ function Services() {
                 <h3>{service.title}</h3>
                 <p>{service.description}</p>
 
-                <strong className="mt-4 block text-sm font-black leading-6 text-brand-900">{service.benefit}</strong>
+                <strong className="mt-4 block text-sm font-black leading-6 text-brand-900 wrap-anywhere">{service.benefit}</strong>
 
                 <ul className="mt-4 space-y-2">
                   {service.features.map((feature) => (
-                    <li key={feature} className="flex gap-2 text-sm font-semibold leading-6 text-slate-800">
+                    <li key={feature} className="flex min-w-0 gap-2 text-sm font-semibold leading-6 text-slate-800">
                       <Check size={17} className="service-check mt-1 shrink-0" />
-                      <span>{feature}</span>
+                      <span className="min-w-0 wrap-anywhere">{feature}</span>
                     </li>
                   ))}
                 </ul>

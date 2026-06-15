@@ -16,6 +16,11 @@
     @apply overflow-x-hidden;
   }
 
+  main,
+  section {
+    @apply min-w-0;
+  }
+
   img,
   iframe {
     @apply max-w-full;
@@ -32,7 +37,7 @@
   input,
   select,
   textarea {
-    @apply w-full rounded-md border border-slate-300 bg-white px-4 py-3 text-sm font-semibold text-ink shadow-sm outline-none transition placeholder:text-slate-500 focus:border-brand-700 focus:ring-4 focus:ring-blue-100;
+    @apply min-w-0 w-full rounded-md border border-slate-300 bg-white px-4 py-3 text-sm font-semibold text-ink shadow-sm outline-none transition placeholder:text-slate-500 focus:border-brand-700 focus:ring-4 focus:ring-blue-100;
   }
 
   textarea {
@@ -71,7 +76,7 @@
   }
 
   .btn {
-    @apply inline-flex min-h-12 items-center justify-center gap-2 rounded-md px-4 py-3 text-sm font-black shadow-sm transition duration-200 hover:-translate-y-0.5 focus:outline-none focus:ring-4 sm:px-5;
+    @apply inline-flex min-h-12 min-w-0 items-center justify-center gap-2 rounded-md px-4 py-3 text-center text-sm font-black shadow-sm transition duration-200 hover:-translate-y-0.5 focus:outline-none focus:ring-4 sm:px-5;
   }
 
   .btn-xl {
@@ -189,14 +194,29 @@
   }
 
   .contact-panel {
-    @apply rounded-md border border-slate-200 bg-white p-4 shadow-card ring-1 ring-slate-200 transition duration-200 sm:p-6;
+    @apply min-w-0 rounded-md border border-slate-200 bg-white p-4 shadow-card ring-1 ring-slate-200 transition duration-200 sm:p-6;
   }
 
   .contact-row {
-    @apply flex items-start gap-3 rounded-md border border-slate-200 bg-slate-50 p-3 transition duration-200 hover:-translate-y-1 hover:border-brand-200 hover:bg-white hover:shadow-card sm:p-4;
+    @apply min-w-0 flex items-start gap-3 rounded-md border border-slate-200 bg-slate-50 p-3 transition duration-200 hover:-translate-y-1 hover:border-brand-200 hover:bg-white hover:shadow-card sm:p-4;
+  }
+
+  .mobile-actions {
+    @apply fixed inset-x-0 bottom-0 z-50 grid grid-cols-2 gap-2 border-t border-slate-200 bg-white/95 px-2 pt-2 shadow-[0_-12px_35px_rgba(15,23,42,0.18)] backdrop-blur md:hidden;
+  }
+
+  .mobile-actions .btn {
+    @apply min-h-11 gap-1.5 px-2 py-2 text-xs min-[360px]:text-sm;
   }
 
   .footer-link {
     @apply transition hover:text-white hover:underline hover:underline-offset-4;
+  }
+}
+
+@layer utilities {
+  .wrap-anywhere {
+    overflow-wrap: anywhere;
+    word-break: normal;
   }
 }
