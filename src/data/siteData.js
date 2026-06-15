@@ -216,6 +216,7 @@ export const footer = {
     { label: 'Neden Biz?', href: '#neden-biz' },
     { label: 'SSS', href: '#sss' },
     { label: 'İletişim', href: '#iletisim' },
+    { label: 'Gizlilik Politikası', href: '/gizlilik-politikasi/' },
   ],
   copyright: '© 2026 Gelişim Teknik Servis. Tüm hakları saklıdır.',
 };

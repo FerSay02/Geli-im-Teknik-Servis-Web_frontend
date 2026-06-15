@@ -31,6 +31,11 @@ export const publicRoutes = [
     changefreq: 'monthly',
     priority: '0.8',
   },
+  {
+    path: '/gizlilik-politikasi/',
+    changefreq: 'yearly',
+    priority: '0.3',
+  },
 ];
 
 export const serviceRouteMap = {

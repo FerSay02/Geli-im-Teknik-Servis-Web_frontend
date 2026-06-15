@@ -2,6 +2,8 @@ import { company, footer, legalNotice } from '../data/siteData.js';
 import { trackConversion } from '../lib/tracking.js';
 
 function Footer() {
+  const linkPrefix = window.location.pathname === '/' ? '' : '/';
+
   return (
     <footer className="bg-brand-950 pb-24 text-white md:pb-8">
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
@@ -24,8 +26,8 @@ function Footer() {
             </p>
           </div>
 
-          <FooterList title="Hizmetler" items={footer.services} />
-          <FooterList title="Kurumsal" items={footer.corporate} />
+          <FooterList title="Hizmetler" items={footer.services} linkPrefix={linkPrefix} />
+          <FooterList title="Kurumsal" items={footer.corporate} linkPrefix={linkPrefix} />
 
           <div>
             <h3 className="text-sm font-black uppercase tracking-wide text-white">İletişim</h3>
@@ -46,7 +48,7 @@ function Footer() {
   );
 }
 
-function FooterList({ title, items }) {
+function FooterList({ title, items, linkPrefix }) {
   return (
     <div>
       <h3 className="text-sm font-black uppercase tracking-wide text-white">{title}</h3>
@@ -54,9 +56,10 @@ function FooterList({ title, items }) {
         {items.map((item) => {
           const label = typeof item === 'string' ? item : item.label;
           const href = typeof item === 'string' ? '#hizmetler' : item.href;
+          const resolvedHref = href.startsWith('#') ? `${linkPrefix}${href}` : href;
           return (
             <li key={label}>
-              <a className="footer-link" href={href}>{label}</a>
+              <a className="footer-link" href={resolvedHref}>{label}</a>
             </li>
           );
         })}
