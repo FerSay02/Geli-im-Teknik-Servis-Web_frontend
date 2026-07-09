@@ -17,7 +17,7 @@ function Header() {
           <span className="min-w-0 max-w-[190px] sm:max-w-[360px] lg:max-w-[480px]">
             <span className="block truncate text-sm font-black leading-none tracking-wide text-white sm:text-lg lg:text-xl">GELİŞİM TEKNİK</span>
             <span className="mt-1 block truncate text-[10px] font-bold uppercase leading-tight text-blue-100/85 sm:text-xs">
-              Beyaz Eşya Klima Kombi Özel Servisi
+              Beyaz Eşya Klima Kombi VRF Servisi
             </span>
           </span>
         </a>

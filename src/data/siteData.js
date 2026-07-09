@@ -22,9 +22,9 @@ export const navLinks = [
 
 export const hero = {
   eyebrow: 'İzmir Bornova yerinde teknik servis',
-  title: 'İzmir Bornova Beyaz Eşya, Klima ve Kombi Özel Servisi',
+  title: 'İzmir Bornova Beyaz Eşya, Klima, Kombi ve VRF Servisi',
   description:
-    'Buzdolabı, çamaşır makinesi, bulaşık makinesi, klima ve kombi arızalarında yerinde servis, hızlı arıza tespiti ve 1 yıl işçilik garantisi.',
+    'Buzdolabı, çamaşır makinesi, bulaşık makinesi, klima, kombi ve VRF arızalarında yerinde servis, hızlı arıza tespiti ve 1 yıl işçilik garantisi.',
   badges: ['Aynı Gün Servis', 'Deneyimli Teknik Ekip', '1 Yıl İşçilik Garantisi', 'Hızlı Arıza Tespiti'],
   trustBadges: ['Aynı Gün Servis', 'Yerinde Servis', 'Garantili İşçilik', 'Hızlı Destek'],
   stats: [
@@ -34,7 +34,7 @@ export const hero = {
 };
 
 export const servicesIntro = {
-  title: 'Beyaz Eşya, Klima ve Kombi Servisi',
+  title: 'Beyaz Eşya, Klima, Kombi ve VRF Servisi',
   subtitle: 'Servis hizmetleri',
   description:
     'İzmir Bornova merkezli ekibimiz, arızayı yerinde tespit eder ve onayınızdan sonra hızlı, garantili işlem yapar.',
@@ -71,13 +71,19 @@ export const services = [
     benefit: 'Güvenli çalışma ve düzenli sıcak su için hızlı servis.',
     features: ['Periyodik bakım', 'Eşanjör ve pompa kontrolü', 'Elektronik kart arızaları'],
   },
+  {
+    title: 'VRF Servisi',
+    description: 'VRF sistemlerinde bakım, arıza tespiti ve performans sorunlarında profesyonel destek.',
+    benefit: 'Merkezi iklimlendirme sistemlerinde düzenli ve verimli çalışma.',
+    features: ['Bakım ve kontrol', 'Arıza tespiti', 'Performans iyileştirme'],
+  },
 ];
 
 export const brandsSection = {
   title: 'Hizmet Verdiğimiz Markalar',
   subtitle: 'Marka desteği',
   description:
-    'Listelenen markalar için özel teknik servis desteği verilir. Gelişim Teknik, bu markaların yetkili servisi değildir.',
+    'Listelenen markalar için teknik servis desteği verilir. Gelişim Teknik, bu markaların yetkili servisi değildir.',
 };
 
 export const whyUsSection = {
@@ -149,7 +155,7 @@ export const faqs = [
   },
   {
     question: 'Hangi cihazlar için servis veriyorsunuz?',
-    answer: 'Buzdolabı, çamaşır makinesi, bulaşık makinesi, klima ve kombi arızaları için yerinde teknik servis sağlıyoruz.',
+    answer: 'Buzdolabı, çamaşır makinesi, bulaşık makinesi, klima, kombi ve VRF arızaları için yerinde teknik servis sağlıyoruz.',
   },
   {
     question: 'WhatsApp üzerinden servis randevusu alabilir miyim?',
@@ -160,9 +166,9 @@ export const faqs = [
 export const serviceAreas = [
   {
     district: 'Bornova',
-    title: 'Bornova Beyaz Eşya, Klima ve Kombi Servisi',
+    title: 'Bornova Beyaz Eşya, Klima, Kombi ve VRF Servisi',
     description:
-      'Yeşilova merkezli ekibimiz Bornova genelinde buzdolabı, çamaşır makinesi, bulaşık makinesi, klima ve kombi arızalarına hızlı servis sağlar.',
+      'Yeşilova merkezli ekibimiz Bornova genelinde buzdolabı, çamaşır makinesi, bulaşık makinesi, klima, kombi ve VRF arızalarına hızlı servis sağlar.',
   },
   {
     district: 'Bayraklı',
@@ -178,7 +184,7 @@ export const serviceAreas = [
   },
   {
     district: 'Konak',
-    title: 'Konak Kombi ve Beyaz Eşya Servisi',
+    title: 'Konak Kombi, VRF ve Beyaz Eşya Servisi',
     description:
       'Konak ilçesinde acil cihaz arızaları için hızlı arıza tespiti, şeffaf bilgilendirme ve garantili işçilik sağlanır.',
   },
@@ -202,16 +208,17 @@ export const contactSection = {
     'Bulaşık Makinesi Servisi',
     'Klima Servisi',
     'Kombi Servisi',
+    'VRF Servisi',
     'Diğer',
   ],
 };
 
-export const legalNotice = 'Gelişim Teknik özel teknik servis hizmeti sunar. Marka yetkili servisi değildir.';
+export const legalNotice = 'Gelişim Teknik teknik servis hizmeti sunar. ';
 
 export const footer = {
   description:
-    'İzmir Bornova merkezli beyaz eşya, klima ve kombi teknik servisi. Aynı gün servis, hızlı destek ve 1 yıl işçilik garantisi.',
-  services: ['Buzdolabı Servisi', 'Çamaşır Makinesi Servisi', 'Bulaşık Makinesi Servisi', 'Klima Servisi', 'Kombi Servisi'],
+    'İzmir Bornova merkezli beyaz eşya, klima, kombi ve VRF teknik servisi. Aynı gün servis, hızlı destek ve 1 yıl işçilik garantisi.',
+  services: ['Buzdolabı Servisi', 'Çamaşır Makinesi Servisi', 'Bulaşık Makinesi Servisi', 'Klima Servisi', 'Kombi Servisi', 'VRF Servisi'],
   corporate: [
     { label: 'Neden Biz?', href: '#neden-biz' },
     { label: 'SSS', href: '#sss' },

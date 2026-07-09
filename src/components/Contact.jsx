@@ -257,7 +257,7 @@ function Contact() {
 
         <div className="contact-panel mt-5 overflow-hidden p-0">
           <div className="px-4 py-5 sm:px-7">
-            <h3 className="break-words text-xl font-black text-ink sm:text-2xl">Gelişim Teknik - İzmir Bornova Özel Teknik Servis</h3>
+            <h3 className="break-words text-xl font-black text-ink sm:text-2xl">Gelişim Teknik - İzmir Bornova Teknik Servis</h3>
             <p className="mt-2 text-sm font-semibold leading-6 text-slate-700">
               Yeşilova, Bornova / İzmir adresinden Bornova ve Bayraklı bölgelerine servis planlanır.
             </p>
@@ -270,7 +270,7 @@ function Contact() {
             allowFullScreen
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
-            title="Gelişim Teknik - İzmir Bornova Özel Teknik Servis"
+            title="Gelişim Teknik - İzmir Bornova Teknik Servis"
           />
         </div>
       </div>

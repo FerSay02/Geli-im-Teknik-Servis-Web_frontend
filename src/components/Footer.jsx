@@ -16,7 +16,7 @@ function Footer() {
               <div className="min-w-0">
                 <strong className="block text-xl font-black">GELİŞİM TEKNİK</strong>
                 <span className="mt-1 block max-w-xs break-words text-xs font-bold uppercase leading-5 text-blue-100">
-                  Beyaz Eşya Klima Kombi Özel Servisi
+                  Beyaz Eşya Klima Kombi VRF Servisi
                 </span>
               </div>
             </div>

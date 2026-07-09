@@ -1,8 +1,8 @@
-import { Check, Flame, Refrigerator, Snowflake, WashingMachine, Wrench } from 'lucide-react';
+import { AirVent, Check, Flame, Refrigerator, Snowflake, WashingMachine, Wrench } from 'lucide-react';
 import { services, servicesIntro } from '../data/siteData.js';
 import SectionHeading from './SectionHeading.jsx';
 
-const icons = [Refrigerator, WashingMachine, DishwasherIcon, Snowflake, Flame];
+const icons = [Refrigerator, WashingMachine, DishwasherIcon, Snowflake, Flame, AirVent];
 
 function DishwasherIcon({ size = 28, strokeWidth = 2.2 }) {
   return (
@@ -23,7 +23,7 @@ function Services() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeading {...servicesIntro} />
 
-        <div className="mt-7 grid gap-4 md:grid-cols-2 xl:grid-cols-5">
+        <div className="mt-7 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
           {services.map((service, index) => {
             const Icon = icons[index] || Wrench;
             return (
